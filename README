@@ -1,0 +1,64 @@
+//ws.fVal// super-simple jQuery form validation plugin
+Documentation
+
+QUICK START:
+ -Add jQuery and the plugin before your tag
+ -On document ready, Target any id to apply validation: $('#id').fVal({ options go here });
+ -Add options in-between the {} brackets, separated by a comma 
+  i.e.: $('#id').fVal({ type:'phone',errorId:'ph_error',notify:'dot' });
+
+OPTIONS:
+
+Types: type: ‘phone’, type:’date’, type:’required’,type:’number’,type:’email’,type:’url’
+
+Phone Formatting: by default, formats to (123) 456-7890, format:’numbers’ (returns only numbers)
+
+Date Formatting: by default, formats to mm/dd/yyyy, format:’dash’ (mm-dd-yyyy), format:’mysql’ (yyyy-mm-dd)
+
+Error Messages: errorId:’phone_error’ – outputs error message to span or div with id=”phone_error”
+
+Custom Error Message: error:’you really must enter phone’ – overwrites default phone error with your own
+
+Notification Style: notify:’asterisk’ (adds red *), notify:’dot’ (adds images/errordot.png…customizable!), notify:’red’ (changes field red)
+
+Min,Max Length: minLength: 3 (must have 3 or more), maxLength: 5 (must have under 5)
+
+
+MORE DETAIL ON TYPES
+type: ‘phone’
+converts to (123) 456-0789 format, removes non-digits
+(OPTION) format:’numbers’ – converts to numbers only 1234560789
+
+type: ‘date’
+converts to mm/dd/yyyy, fixes 2-digit years and 1-digit months
+(OPTION) format:’dash’ – converts to mm-dd-yyyy
+(OPTION) format:’mysql’ – converts to yyyy-mm-dd for databse use
+
+type: ‘required’
+Form won’t validate if it is blank or has only spaces
+(OPTION) minLength: 3 – must have at least 3 characters
+(OPTION) maxLength: 5 – max 5 characters
+
+type: ‘number’
+Form won’t validate if it is blank or has only spaces
+(OPTION) minLength: 3 – must have at least 3 characters
+(OPTION) maxLength: 5 – max 5 characters
+
+type: ‘email’
+
+type: ‘url’
+
+
+DETAILED INSTALLATION
+Include jQuery and the plugin in your header by pasting this code BEFORE the tag
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/ws.fval.js"></script>
+<script type="text/javascript">
+$(function(){
+//your input fields with validation go here 
+});
+</script>
+Target an input field and use fVal
+$('#phone').fVal({type:'phone'});
+All you have to include is a type, but it helps to add more options
+$('#phone').fVal({type:'phone',errrorId:'phone_error',notify:'dot'}
