@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!-- form style...this is not required...just for show -->
+<style>
+body {font-family:helvetica,arial;color:#999;font-size:11px;}
+label {color:#333}
+span {font-size:13px;}
+input {border:1px solid #a9a9a9;padding:2px;border-radius:5px;-webkit-border-radius:5px;-moz-border-radius:5px;outline:none;-webkit-transition:-webkit-box-shadow 0.4s ease-in-out}
+input:focus {-webkit-box-shadow:#0C3 0px 0px 10px;}
+</style>
+<!-- end form style -->
+
+
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
+<script type="text/javascript" src="js/ws.fval.js"></script>
+
+
+<script>
+
+$(function(){ //wait till document loads before looking for id's
+	$('#phone').fVal({type:'phone',errorId:'pher',error:'must have phone',notify:'asterisk'}); //options: format : 'numbers' - (returns numbers only)
+	$('#date').fVal({type:'date',format:'standard',errorId:'dateer',notify:'dot'}); //options: format : 'dash' (mm/dd/yyyy) or format : 'mysql' (yyyy-mm-dd) 
+	$('#text').fVal({type:'required',minLength:2,errorId:'texter',notify:'red'}); //options: minLength : 3, maxLength : 6 (add one or both)
+	$('#number').fVal({type:'number',minLength:2,maxLength:5,errorId:'numberer', notify:'red'}); //options: minLength : 3, maxLength : 6 (add one or both)
+	$('#email').fVal({type:'email',errorId:'emailer'}); 
+	$('#url').fVal({type:'url',errorId:'urler'}); 
+});
+</script>
+
+</head>
+
+<body>
+Try, if you dare, to submit me empty.
+<form id="form1" action="javascript:alert('go!')">
+    <label for="phone">Phone: </label><input id="phone" />&nbsp;<span id="pher" style="color:red"></span>  notify:'asterisk'<br />
+    <label for="date">Date: </label><input id="date" />&nbsp;<span id="dateer" style="color:red"></span>  notify:'dot'<br />
+    <label for="name">Text: </label><input id="text" />&nbsp;<span id="texter" style="color:red"></span> notify:'red'<br />
+    <label for="number">Number: </label><input id="number" />&nbsp;<span id="numberer" style="color:red"></span>  notify:'red'<br />
+    <label for="email">Email: </label><input id="email" />&nbsp;<span id="emailer" style="color:red"></span><br />
+    <label for="url">URL: </label><input id="url" />&nbsp;<span id="urler" style="color:red"></span><br />
+    <input type="submit"/>
+</form>
+
+</body>
+</html>
