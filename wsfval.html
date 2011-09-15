@@ -26,7 +26,7 @@ $(function(){ //wait till document loads before looking for id's
 	$('#text').fVal({type:'required',minLength:2,errorId:'texter',notify:'red'}); //options: minLength : 3, maxLength : 6 (add one or both)
 	$('#number').fVal({type:'number',minLength:2,maxLength:5,errorId:'numberer', notify:'red'}); //options: minLength : 3, maxLength : 6 (add one or both)
 	$('#email').fVal({type:'email',errorId:'emailer'}); 
-	$('#url').fVal({type:'url',errorId:'urlError'}); 
+	$('#url').fVal({type:'url',errorId:'urlErr'}); 
 });
 </script>
 
@@ -40,7 +40,7 @@ Try, if you dare, to submit me empty.
     <label for="name">Text: </label><input id="text" />&nbsp;<span id="texter" style="color:red"></span> notify:'red'<br />
     <label for="number">Number: </label><input id="number" />&nbsp;<span id="numberer" style="color:red"></span>  notify:'red'<br />
     <label for="email">Email: </label><input id="email" />&nbsp;<span id="emailer" style="color:red"></span><br />
-    <label for="url">URL: </label><input id="url" />&nbsp;<span id="urlError" style="color:red"></span><br />
+    <label for="url">URL: </label><input id="url" />&nbsp;<span id="urlErr" style="color:red"></span><br />
     <input type="submit"/>
 </form>
 
