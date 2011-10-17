@@ -315,7 +315,7 @@ simple form validation
 	
 	//the actual plugin
 	$.fn.fVal = function(o){
-		var id = this
+		var id = this;
 		var fail = 0;
 		if(o && o.type){ //it has options, so it's a go	
 			o.id = this.attr('id');
