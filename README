@@ -50,15 +50,21 @@ type: ‘url’
 
 
 DETAILED INSTALLATION
-Include jQuery and the plugin in your header by pasting this code BEFORE the tag
+
+Copy and paste this code into your head tag
+
+//Include jQuery and the plugin
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script type="text/javascript" src="js/ws.fval.js"></script>
+
 <script type="text/javascript">
 $(function(){
 //your input fields with validation go here 
+  
+  //Target an input field and use fVal
+   $('#email').fVal({type:'email'});  //require email
+   
+   //All you have to include is a type, but it helps to add more options
+   $('#phone').fVal({type:'phone',errrorId:'phone_error',notify:'dot'} //require phone, print errors to div or span with id of "phone_error", include red dot
 });
 </script>
-Target an input field and use fVal
-$('#phone').fVal({type:'phone'});
-All you have to include is a type, but it helps to add more options
-$('#phone').fVal({type:'phone',errrorId:'phone_error',notify:'dot'}
